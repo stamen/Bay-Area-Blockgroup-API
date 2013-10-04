@@ -1,3 +1,9 @@
+# Bay Area Blockgroup API
+This is a modified version of Code for America's [US Census Area API](https://github.com/codeforamerica/US-Census-Area-API) that checks only against the US Census block group geometries. During (and possibly after) the US government shutdown, it will be used as a replacement for the [FCC's Block Conversion API](http://www.fcc.gov/developer/census-block-conversions-api-v1.0.1) ([cached](http://webcache.googleusercontent.com/search?q=cache:PHkruETVxnEJ:www.fcc.gov/developer/census-block-conversions-api-v1.0.1+&cd=3&hl=en&ct=clnk&gl=us)), which provides data describing which Census areas (including a block-level FIPS code) intersect with a given latitude and longitude.
+
+The [original README](https://github.com/codeforamerica/hack-requests/blob/master/census-area-API.md) follows:
+
+
 US Census Area API
 ==================
 
