@@ -5,10 +5,16 @@ from re import compile
 float_pat = compile(r'^-?\d+\.\d+(e-?\d+)?$')
 charfloat_pat = compile(r'^[\[,\,]-?\d+\.\d+(e-?\d+)?$')
 
-def json_encode(data):
+def json_encode(data, pretty=False):
     ''' Encode stream of JSON with 7-digits floating point precision.
     '''
-    encoder = JSONEncoder(separators=(',', ':'))
+    if pretty:
+        separators = (', ', ': ')
+        indent = 2
+    else:
+        separators = (',', ':')
+        indent = None
+    encoder = JSONEncoder(indent=indent, separators=separators)
     encoded = encoder.iterencode(data)
     output = StringIO()
     

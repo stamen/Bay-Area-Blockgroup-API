@@ -26,6 +26,7 @@ def areas():
     lon = float(request.args['lon'])
 
     include_geom = bool(request.args.get('include_geom', True))
+    pretty = bool(request.args.get('pretty', False))
     json_callback = request.args.get('callback', None)
     
     # This. Is. Python.
@@ -42,7 +43,7 @@ def areas():
         features += get_intersecting_features(ogr.Open(shpname), dataname, *args)
 
     geojson = dict(type='FeatureCollection', features=features)
-    body, mime = json_encode(geojson), 'application/json'
+    body, mime = json_encode(geojson, pretty=pretty), 'application/json'
     
     if json_callback:
         body = '%s(%s);\n' % (json_callback, body)
