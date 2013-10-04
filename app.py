@@ -10,8 +10,8 @@ from geo import get_intersecting_features
 from util import json_encode, bool
 
 filenames = [
-    ('Bay Area Census (2010-2013)', 'datasource.shp', None),
-    ]
+    ('Bay Area Census Blockgroups (2010-2013)', 'bay-area-census/blockgroups.shp', None),
+]
 
 app = Flask(__name__)
 
