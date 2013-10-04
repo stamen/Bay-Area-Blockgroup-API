@@ -2,3 +2,4 @@ venv-census-api
 datasource.???
 app.pyc
 *.pyc
+.*.sw?
